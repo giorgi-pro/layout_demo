@@ -16,7 +16,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="container mx-auto">
+          <div className="grid grid-rows-[auto_auto_auto_1fr_auto] gap-4 h-screen mx-4">
+            <div style={{ background: "green" }}>header</div>
+            <div style={{ background: "blue" }}>menu #1</div>
+            <div style={{ background: "pink" }}>menu #2</div>
+            <section
+              style={{ background: "blue" }}
+              className="flex flex-col bg-base-300 gap-8"
+            >
+              {children}
+            </section>
+            <div style={{ background: "red" }}>footer</div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
